@@ -21,6 +21,14 @@ export type Quiz = {
   getResult?: GetResultFunction;
 }
 
+export type QuizMeta = {
+  episode: string;
+  episodeTitle: string;
+  title: string;
+  author: string;
+  description: string;
+}
+
 export type Answers = Array<[string, string]>;
 export type GetAnswersFunction = (form: HTMLFormElement | null) => Answers | null;
 
