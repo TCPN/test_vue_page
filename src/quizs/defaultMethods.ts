@@ -44,6 +44,12 @@ export function getScore(answers: Answers | null, quiz: Quiz): number {
   return score;
 }
 
+export const getScoreSum = getScore;
+export const getScoreAverage = (answers: Answers | null, quiz: Quiz): number => {
+  const score = getScore(answers, quiz);
+  return score / quiz.questions.length;
+};
+
 export function getResult(answers: Answers, quiz: Quiz): QuizResult | null {
   const score = getScore(answers, quiz);
   return { score, text: `你的總分是 ${score} 分` };
