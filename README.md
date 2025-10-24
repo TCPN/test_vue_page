@@ -5,6 +5,8 @@ This is a test project, which refactors the `quiz_collection` project with ejs p
 - reuse the Header and Footer components
 - write the quiz info in the quiz page html, so that web crawlers can get basic quiz info.
 
+The deployed website is at https://tcpn.github.io/test_vue_page/quizs/
+
 # Pre-requisites
 
 You need `node.js >= 20` and `npm` or `pnpm` for development and deployment.
