@@ -8,6 +8,7 @@ import { quizs } from './src/quizs/quizList';
 // https://vite.dev/config/
 export default defineConfig({
   root: './src',
+  base: '/test_vue_pages/',
   plugins: [
     vue(),
     vueDevTools(),
