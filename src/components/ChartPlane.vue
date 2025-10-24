@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { useTemplateRef, watch } from 'vue';
+import { onMounted, onUpdated, useTemplateRef, watch } from 'vue';
 import { drawPlane, type DrawPlaneOptions, type DrawPoint } from './drawPlane';
 
 const props = defineProps<{
@@ -13,9 +13,17 @@ const props = defineProps<{
 
 const container = useTemplateRef<HTMLDivElement | null>('container');
 
-watch(() => props.points, (newPoints) => {
+function updateChart(newPoints: DrawPoint[]) {
   if (!container.value) return;
-  // render chart with new data
+  console.log('ChartPlane points updated:', newPoints);
   drawPlane(container.value, newPoints, props.opts ?? {});
-}, { immediate: true });
+}
+
+onMounted(() => {
+  updateChart(props.points);
+});
+
+onUpdated(() => {
+  updateChart(props.points);
+});
 </script>
