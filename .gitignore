@@ -1,2 +1,6 @@
 dist/
 node_modules/
+.vite/
+
+src/quizs/quizList.ts
+src/quizs/*/index.html

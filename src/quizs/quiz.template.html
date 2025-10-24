@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> - 機智青年生活 - GOODTV+ 好消息電視台</title>
+  <link rel="stylesheet" href="../../common/style.css" />
+  
+  <script type="module">
+    import { createApp } from 'vue';
+    import App from './App.vue';
+    import Header from '@/components/Header.vue';
+    import Footer from '@/components/Footer.vue';
+
+    createApp(App).mount('#app');
+    createApp(Header).mount('#header');
+    createApp(Footer).mount('#footer');
+  </script>
+  <script type="module">
+    import { autofill } from '@/common/dev.js';
+    window.autofill = autofill;
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <div id="content">
+    <!-- 標題 -->
+    <h1 class="title no-select"><%= title %></h1>
+
+    <!-- 作者資訊 -->
+    <div class="author no-select">
+      <p><%= author %></p>
+    </div>
+
+    <!-- 說明文字 -->
+    <div class="description no-select">
+      <p><%= description %></p>
+    </div>
+
+    <div id="app"></div>
+  </div>
+
+  <div id="footer"></div>
+</body>
+
+</html>
