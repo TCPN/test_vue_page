@@ -19,8 +19,8 @@ const props = defineProps<{
       :href="quiz.link"
       class="quiz"
     >
+      <div class="quiz-subtitle">{{ quiz.episode }} {{ quiz.episodeTitle ?? '' }}</div>
       <div class="quiz-title">{{ quiz.title }}</div>
-      <div class="quiz-desc">{{ quiz.episode }} {{ quiz.episodeTitle ?? '' }}</div>
     </a>
   </div>
 </template>
@@ -44,8 +44,13 @@ const props = defineProps<{
   background-color: #f9f9f9;
 }
 
-.quiz-desc {
-  color: #999;
-  font-size: 0.7em;
+.quiz-title {
+  font-size: 1.33rem;
+}
+
+.quiz-subtitle {
+  color: #ccc;
+  font-size: 0.6em;
+  margin: -0.1em 0;
 }
 </style>
