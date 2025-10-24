@@ -20,7 +20,9 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-    "deploy": "gh-pages -d src/dist"
+    "predeploy": "npm run build",
+    "deploy": "npm run deploy:gh-pages",
+    "deploy:gh-pages": "gh-pages -d src/dist"
   },
   "dependencies": {
     "vue": "^3.5.22"
